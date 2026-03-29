@@ -6,7 +6,6 @@ import corsOptions from "./config/corsOptions.js";
 import mongoose from "mongoose";
 import path from "path";
 import { fileURLToPath } from "url"; //to get __dirname in ES modules
-import { error } from "console";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
