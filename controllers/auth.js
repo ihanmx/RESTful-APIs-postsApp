@@ -1,7 +1,6 @@
 import User from "../models/user.js";
 import { validationResult } from "express-validator";
 import bcrypt from "bcryptjs";
-import user from "../models/user.js";
 import jwt from "jsonwebtoken";
 
 const postSignup = async (req, res, next) => {
@@ -63,9 +62,7 @@ const postLogin = async (req, res, next) => {
       { expiresIn: "1h" },
     );
 
-    return res
-      .status(200)
-      .json({ token: token, userId: user._id.toString() });
+    return res.status(200).json({ token: token, userId: user._id.toString() });
   } catch (err) {
     if (!err.statusCode) {
       err.statusCode = 500;
